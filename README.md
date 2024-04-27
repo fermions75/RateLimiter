@@ -13,7 +13,6 @@ The rate limiter is implemented as a Python decorator, so it can be easily appli
 Here's a snippet from the `RateLimiter` class:
 
 ```
-python
 self.tokens += time_passed * (self.max_requests / self.interval_seconds) # add tokens for the time passed since the last request
 print(f"Tokens: {self.tokens}.")
 if self.tokens > self.max_requests:
