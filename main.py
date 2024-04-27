@@ -46,14 +46,15 @@ class Calculator:
             return a + b
         return get_sum
 
-my_object = Calculator(max_requests=5, interval_seconds=60)
+# configure rate limit per minute through constructor
+calc_object = Calculator(max_requests=5, interval_seconds=60) # 5 requests per minute
 
 # Test rate-limited method
 second = 0
 for i in range(1, 11):
     print(f"This is request number {i} at second {second}.")
     try:
-        val = my_object.get_sum(1, 2)
+        val = calc_object.get_sum(1, 2)
         print(val)
     except Exception as e:
         print(e)
