@@ -13,6 +13,7 @@ The rate limiter is implemented as a Python decorator, so it can be easily appli
 Here's a snippet from the `RateLimiter` class:
 
 ```
+python
 self.tokens += time_passed * (self.max_requests / self.interval_seconds) # add tokens for the time passed since the last request
 print(f"Tokens: {self.tokens}.")
 if self.tokens > self.max_requests:
@@ -27,8 +28,14 @@ self.last_request_time = current_time
 return func(*args, **kwargs)
 ```
 
-## Contributing
-Contributions are welcome. Please open a pull request with your changes.
+## Files
 
+- `main.py`: This is the main entry point of the application. It creates multiple threads and uses the `RateLimiter` class to ensure that the rate of requests does not exceed a specified limit.
+
+- `thread_safe.py`: This file contains the implementation of the `RateLimiter` class. The `RateLimiter` uses a token bucket algorithm to limit the rate of requests. It is thread-safe, meaning it can be used by multiple threads at the same time without causing race conditions.
+
+## Contributing
+
+Contributions are welcome. Please open a pull request with your changes.
 
 
