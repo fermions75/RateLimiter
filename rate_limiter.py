@@ -28,7 +28,6 @@ class RateLimiter:
                     self.tokens = self.max_requests
                 
                 if self.tokens < 1:
-                    self.tokens -= 1
                     self.last_request_time = current_time
                     print("tokens after request execution: ", self.tokens)
                     raise Exception("Rate limit exceeded. Please try again later.")

@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     # Test rate-limited method
     second = 0
-    for i in range(1, 11):
+    for i in range(1, 20):
         print(f"This is request number {i} at second {second}.")
         try:
             val = calc_object.get_sum(1, 2)
@@ -29,4 +29,4 @@ if __name__ == "__main__":
             print(e)
         finally:
             second += 5
-            time.sleep(5)
+            time.sleep(1)
